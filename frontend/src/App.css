@@ -1,0 +1,207 @@
+body {
+
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+
+  background: linear-gradient(
+    to right,
+    #dbeafe,
+    #f0f9ff
+  );
+
+}
+
+
+.container {
+
+  width: 90%;
+
+  margin: auto;
+
+  padding: 20px;
+
+}
+
+
+h1 {
+
+  text-align: center;
+
+  color: #1e3a8a;
+
+  font-size: 48px;
+
+  margin-bottom: 30px;
+
+}
+
+
+.card {
+
+  background: white;
+
+  padding: 25px;
+
+  margin-bottom: 30px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  transition: 0.3s;
+
+}
+
+
+.card:hover {
+
+  transform: translateY(-5px);
+
+}
+
+
+h2 {
+
+  color: #2563eb;
+
+  margin-bottom: 20px;
+
+}
+
+
+input {
+
+  width: 180px;
+
+  padding: 12px;
+
+  margin: 10px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+}
+
+
+button {
+
+  padding: 12px 20px;
+
+  background: #2563eb;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+
+}
+
+
+button:hover {
+
+  background: #1d4ed8;
+
+  transform: scale(1.05);
+
+}
+
+
+table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+  margin-top: 20px;
+
+  background: white;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+}
+
+
+table th {
+
+  background: #2563eb;
+
+  color: white;
+
+  padding: 14px;
+
+}
+
+
+table td {
+
+  padding: 12px;
+
+  border-bottom: 1px solid #ddd;
+
+  text-align: center;
+
+}
+
+
+table tr:hover {
+
+  background: #eff6ff;
+
+}
+
+
+.alert-box {
+
+  padding: 12px;
+
+  margin: 10px 0;
+
+  border-radius: 8px;
+
+  font-weight: bold;
+
+}
+
+
+.low-stock {
+
+  background: #fee2e2;
+
+  color: #b91c1c;
+
+}
+
+
+.expiry {
+
+  background: #fef3c7;
+
+  color: #92400e;
+
+}
+
+
+.chart-container {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin-top: 20px;
+
+}
