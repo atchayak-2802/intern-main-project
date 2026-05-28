@@ -9,6 +9,7 @@ const {
   getSales,
 
   brandAnalytics,
+  getTodaySummary
 
 } = require(
   "../controllers/salesController"
@@ -23,5 +24,6 @@ router.get(
   "/analytics",
   brandAnalytics
 );
+router.get("/summary/today", getTodaySummary);
 
 module.exports = router;
