@@ -2,82 +2,193 @@ import { useEffect, useState } from "react";
 
 import axios from "axios";
 
+function Alerts() {
 
-function Alerts({ refresh }) {
+  const [expiry, setExpiry] = useState([]);
 
-  const [lowStock, setLowStock] =
-    useState([]);
-
-  const [expiry, setExpiry] =
-    useState([]);
-
-
-  const fetchAlerts = async () => {
-
-    const low = await axios.get(
-      "http://localhost:5000/api/products/alerts/lowstock"
-    );
-
-    const exp = await axios.get(
-      "http://localhost:5000/api/products/alerts/expiry"
-    );
-
-    setLowStock(low.data);
-
-    setExpiry(exp.data);
-
-  };
+  const [lowStock, setLowStock] = useState([]);
 
 
   useEffect(() => {
 
     fetchAlerts();
 
-  }, [refresh]);
+  }, []);
+
+
+  const fetchAlerts = async () => {
+
+    const exp = await axios.get(
+      "http://localhost:5000/api/products/alerts/expiry"
+    );
+
+    const low = await axios.get(
+      "http://localhost:5000/api/products/alerts/lowstock"
+    );
+
+    setExpiry(exp.data);
+
+    setLowStock(low.data);
+  };
+
+
+  // DAYS LEFT
+
+  const getDaysLeft = (date) => {
+
+    const today = new Date();
+
+    const expiryDate = new Date(date);
+
+    const diffTime =
+      expiryDate - today;
+
+    return Math.ceil(
+      diffTime / (1000 * 60 * 60 * 24)
+    );
+  };
+
+
+  // EXPIRY COLOR
+
+  const getExpiryClass = (days) => {
+
+    if (days < 0) {
+
+      return "expired";
+
+    } else if (days <= 2) {
+
+      return "critical";
+
+    } else if (days <= 7) {
+
+      return "warning";
+
+    } else {
+
+      return "safe";
+    }
+  };
+
+
+  // STOCK COLOR
+
+  const getStockClass = (qty) => {
+
+    if (qty <= 5) {
+
+      return "critical";
+
+    } else {
+
+      return "warning";
+    }
+  };
 
 
   return (
-    <div>
 
-      <h2>Alerts</h2>
+    <div className="alerts-wrapper">
 
+      <h1 className="alert-title">
 
-      <h3>Low Stock</h3>
+        INVENTORY ALERTS
 
-      {lowStock.length === 0 ? (
-        <p>No Low Stock</p>
-      ) : (
-
-        lowStock.map((item) => (
-
-          <p key={item._id}
-          classname="alert-box low-stock">
-            ⚠ {item.productName}
-            {" "}Low Stock
-          </p>
-
-        ))
-
-      )}
+      </h1>
 
 
-      <h3>Near Expiry</h3>
+      {/* LOW STOCK */}
 
-      {expiry.length === 0 ? (
-        <p>No Expiry Alerts</p>
-      ) : (
+      {lowStock.map((item) => (
 
-        expiry.map((item) => (
+        <div
+          key={item._id}
+          className={`alert-card ${getStockClass(item.quantity)}`}
+        >
 
-          <p key={item._id}
-          classname="alert-box expiry">
-            ⚠ {item.productName}
-            {" "}Near Expiry
-          </p>
+          <div className="alert-icon">
 
-        ))
+            {item.quantity <= 5
+              ? "🚨"
+              : "⚠️"}
 
-      )}
+          </div>
+
+          <div>
+
+            <h3>
+
+              Low Stock Alert
+
+            </h3>
+
+            <p>
+
+              {item.productName}
+              {" "}has only{" "}
+              <strong>
+                {item.quantity}
+              </strong>
+              {" "}items left.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      ))}
+
+
+      {/* EXPIRY */}
+
+      {expiry.map((item) => {
+
+        const daysLeft =
+          getDaysLeft(item.expiryDate);
+
+        return (
+
+          <div
+            key={item._id}
+            className={`alert-card ${getExpiryClass(daysLeft)}`}
+          >
+
+            <div className="alert-icon">
+
+              {daysLeft < 0
+                ? "❌"
+                : daysLeft <= 2
+                ? "🚨"
+                : daysLeft <= 7
+                ? "⚠️"
+                : "✅"}
+
+            </div>
+
+            <div>
+
+              <h3>
+
+                {item.productName}
+
+              </h3>
+
+              <p>
+
+                {daysLeft < 0
+                  ? "Product Expired"
+                  : `Expires in ${daysLeft} day(s)`}
+
+              </p>
+
+            </div>
+
+          </div>
+
+        );
+      })}
 
     </div>
   );

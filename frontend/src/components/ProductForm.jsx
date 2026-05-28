@@ -67,9 +67,9 @@ function ProductForm({
 
 
   return (
-    <div>
+    <div className="card">
 
-      <h2>Add Product</h2>
+      <h2>ADD PRODUCT</h2>
 
       <input
         name="productName"

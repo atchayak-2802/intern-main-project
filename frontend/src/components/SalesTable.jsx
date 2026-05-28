@@ -30,7 +30,7 @@ function SalesTable({ refresh }) {
   return (
     <div className="card">
 
-      <h2>Sales History</h2>
+      <h2>SALES HISTORY </h2>
 
       <table>
 

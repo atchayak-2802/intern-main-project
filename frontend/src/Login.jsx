@@ -2,7 +2,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,7 +28,7 @@ function Login() {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "100px" }}>
+    <div className="card" style={{maxWidth: "400px",margin: "100px auto"}}>
       <h2>Login</h2>
 
       <form onSubmit={handleLogin}>
@@ -43,6 +43,10 @@ function Login() {
         <br /><br />
 
         <button type="submit">Login</button>
+        <p>
+  Don't have an account?
+  <Link to="/register"> Register</Link>
+</p>
       </form>
     </div>
   );

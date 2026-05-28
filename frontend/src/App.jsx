@@ -1,36 +1,38 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { Routes, Route } from "react-router-dom";
+import "./index.css";
 import Login from "./Login";
+import Register from "./Register";
 
 import Dashboard from "./components/Dashboard";
+
+import Inventory from "./components/Inventory";
+import Sales from "./components/Sales";
+
+import Alerts from "./components/Alerts";
 import Analytics from "./components/Analytics";
-import ProductForm from "./components/ProductForm";
-import ProductTable from "./components/ProductTable";
-import SalesForm from "./components/SalesForm";
-import SalesTable from "./components/SalesTable";
 
 function App() {
+
   return (
-    <BrowserRouter>
-      <Routes>
 
-        {/* 🔐 LOGIN PAGE */}
-        <Route path="/" element={<Login />} />
+    <Routes>
 
-        {/* MAIN PAGES */}
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/analytics" element={<Analytics />} />
+      <Route path="/" element={<Login />} />
 
-        {/* PRODUCT */}
-        <Route path="/add-product" element={<ProductForm />} />
-        <Route path="/products" element={<ProductTable />} />
+      <Route path="/register" element={<Register />} />
 
-        {/* SALES */}
-        <Route path="/sales-form" element={<SalesForm />} />
-        <Route path="/sales-table" element={<SalesTable />} />
+      <Route path="/dashboard" element={<Dashboard />} />
 
-      </Routes>
-    </BrowserRouter>
+      <Route path="/inventory" element={<Inventory />} />
+
+      <Route path="/sales" element={<Sales />} />
+
+      <Route path="/alerts" element={<Alerts />} />
+
+      <Route path="/analytics" element={<Analytics />} />
+
+    </Routes>
+
   );
 }
 

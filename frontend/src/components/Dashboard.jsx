@@ -1,71 +1,33 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-
-import ProductForm from "./ProductForm";
-import ProductTable from "./ProductTable";
-import SalesForm from "./SalesForm";
-import Alerts from "./Alerts";
-import Analytics from "./Analytics";
+import { Link } from "react-router-dom";
 
 function Dashboard() {
-  const [products, setProducts] = useState([]);
-  const [refresh, setRefresh] = useState(false);
-
-  const navigate = useNavigate();
-
-  // 🔐 LOGIN PROTECTION
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    if (!token) {
-      navigate("/");
-    }
-  }, []);
-
-  const fetchProducts = async () => {
-    const res = await axios.get(
-      "http://localhost:5000/api/products"
-    );
-
-    setProducts(res.data);
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, [refresh]);
-
-  // 🚪 Logout function
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/");
-  };
 
   return (
-    <div className="container">
 
-      <h1>Smart Inventory Dashboard</h1>
+    <div className="dashboard-grid">
 
-      {/* 🚪 Logout Button */}
-      <button onClick={handleLogout}>
-        Logout
-      </button>
+      <h1>SMART INVENTORY AND EXPIRY MANAGEMENT</h1>
 
-      <ProductForm fetchProducts={fetchProducts} />
+      <div className="dashboard-cards">
 
-      <SalesForm
-        fetchProducts={fetchProducts}
-        setRefresh={setRefresh}
-      />
+        <Link to="/inventory">
+          <button >INVENTORY</button>
+        </Link>
 
-      <Alerts refresh={refresh} />
+        <Link to="/sales">
+          <button >SALES</button>
+        </Link>
 
-      <Analytics refresh={refresh} />
+        <Link to="/alerts">
+          <button >ALERT</button>
+        </Link>
 
-      <ProductTable
-        products={products}
-        fetchProducts={fetchProducts}
-      />
+        <Link to="/analytics">
+          <button >ANALYTICS </button>
+        </Link>
+
+      </div>
+
     </div>
   );
 }

@@ -70,9 +70,9 @@ function SalesForm({
 
 
   return (
-    <div>
+    <div className="card">
 
-      <h2>Sell Product</h2>
+      <h2>SELL PRODUCT </h2>
 
       <input
         name="productName"
