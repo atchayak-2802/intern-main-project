@@ -92,7 +92,7 @@ const lowStock = async (req, res) => {
   try {
 
     const products = await Product.find({
-      quantity: { $lte: 5 },
+      quantity: { $lte:  10},
     });
 
     res.json(products);
