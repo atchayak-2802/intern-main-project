@@ -50,7 +50,8 @@ function Alerts({ refresh }) {
 
         lowStock.map((item) => (
 
-          <p key={item._id}>
+          <p key={item._id}
+          classname="alert-box low-stock">
             ⚠ {item.productName}
             {" "}Low Stock
           </p>
@@ -68,7 +69,8 @@ function Alerts({ refresh }) {
 
         expiry.map((item) => (
 
-          <p key={item._id}>
+          <p key={item._id}
+          classname="alert-box expiry">
             ⚠ {item.productName}
             {" "}Near Expiry
           </p>
