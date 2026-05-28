@@ -4,6 +4,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+  
 }
 
 body{
@@ -63,6 +64,9 @@ h2{
 
 
 /* CARD */
+td {
+  color: #0f172a; 
+}
 
 .card{
 
@@ -179,7 +183,7 @@ table{
 
 table thead{
 
-  background:#2563eb;
+  background:hsl(221, 83%, 53%);
 
   color:white;
 }
@@ -197,7 +201,7 @@ table td{
 
   text-align:center;
 
-  border-bottom:1px solid #e2e8f0;
+  border-bottom:1px solid #2b5c9c;
 
   font-size:16px;
 }
@@ -206,9 +210,10 @@ table tr:hover{
 
   background:#f8fafc;
 }
+table tbodytd {
+  color: rgb(60, 60, 231); 
+}
 
-
-/* ALERTS */
 
 .alert-container{
 
@@ -246,7 +251,7 @@ table tr:hover{
 
 .analytics-box{
 
-  width:70%;
+  width:20%;
 
   margin:auto;
 
@@ -429,7 +434,41 @@ nav a:hover{
 
   transform:translateY(-5px);
 }
+.chart-card {
 
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+  text-align: center;
+}
+.analytics-container {
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin-top: 40px;
+}
 
 /* ICON */
 
@@ -480,6 +519,7 @@ nav a:hover{
     #450a0a
   );
 }
+
 
 
 /* CRITICAL */
@@ -537,23 +577,15 @@ nav a:hover{
     text-align:center;
   }
 }
-.analytics-box{
 
-  width:100%;
-
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
-
-  margin-top:30px;
-}
 
 
 .chart-card{
 
   background:white;
+  justify-content:center;
+
+  align-items:center;
 
   padding:40px;
 
@@ -573,4 +605,62 @@ nav a:hover{
   font-size:30px;
 
   color:#0f172a;
+}
+.back-btn {
+  background-color: #2563eb;  
+  color: white;
+ width: 100px;
+  border: none;
+  padding: 6px 12px;
+  font-size: 15px;
+  border-radius: 0.2px;
+  cursor: pointer;
+  transition: 0.2s ease;
+ 
+
+}
+
+.summary-container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 25px;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.profit {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.loss {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.sales {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+.top {
+  background: linear-gradient(135deg, #9333ea, #a855f7);
+}
+
+.net {
+  background: linear-gradient(135deg, #f97316, #fb923c);
 }

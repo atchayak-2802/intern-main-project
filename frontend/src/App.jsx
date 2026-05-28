@@ -10,6 +10,7 @@ import Sales from "./components/Sales";
 
 import Alerts from "./components/Alerts";
 import Analytics from "./components/Analytics";
+import Summary from "./components/Summary";
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
       <Route path="/alerts" element={<Alerts />} />
 
       <Route path="/analytics" element={<Analytics />} />
+      <Route path="/summary" element={<Summary />} />
 
     </Routes>
 

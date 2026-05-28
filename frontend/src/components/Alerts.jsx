@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 
@@ -7,7 +8,7 @@ function Alerts() {
   const [expiry, setExpiry] = useState([]);
 
   const [lowStock, setLowStock] = useState([]);
-
+const navigate = useNavigate();
 
   useEffect(() => {
 
@@ -91,7 +92,7 @@ function Alerts() {
 
     <div className="alerts-wrapper">
 
-      <h1 className="alert-title">
+      <h1>
 
         INVENTORY ALERTS
 
@@ -189,6 +190,8 @@ function Alerts() {
 
         );
       })}
+      <button className="back-btn" onClick={() => navigate("/dashboard")}>
+          Back</button>
 
     </div>
   );

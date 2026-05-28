@@ -1,7 +1,9 @@
 import SalesForm from "./SalesForm";
-import SalesTable from "./SalesTable";
 
+import SalesTable from "./SalesTable";
+import { useNavigate } from "react-router-dom";
 function Sales() {
+  const navigate = useNavigate();
 
   return (
     <div className="container">
@@ -11,6 +13,8 @@ function Sales() {
       <SalesForm />
 
       <SalesTable />
+      <button className="back-btn" onClick={() => navigate("/dashboard")}>
+          Back</button>
 
     </div>
   );

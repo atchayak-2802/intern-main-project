@@ -83,7 +83,7 @@ function ProductTable({
 
     <div className="card">
 
-      <h2>Inventory</h2>
+      <h2>INVENTORY</h2>
 
       <table>
 

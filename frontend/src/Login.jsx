@@ -9,24 +9,25 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
-        email,
-        password,
-      });
+  try {
+    const res = await axios.post(
+      "http://localhost:5000/api/auth/login",
+      { email, password }
+    );
 
+    if (res.data.token) {
       localStorage.setItem("token", res.data.token);
-
-      alert("Login successful");
-
       navigate("/dashboard");
-    } catch (err) {
-      alert("Invalid login");
+    } else {
+      alert(res.data.message);
     }
-  };
 
+  } catch (err) {
+    alert("Login failed");
+  }
+};
   return (
     <div className="card" style={{maxWidth: "400px",margin: "100px auto"}}>
       <h2>Login</h2>
