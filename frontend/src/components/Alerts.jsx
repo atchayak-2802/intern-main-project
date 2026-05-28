@@ -125,7 +125,7 @@ function Alerts() {
 
             <p>
 
-              {item.productName}
+             {item.brand} {item.productName} 
               {" "}has only{" "}
               <strong>
                 {item.quantity}
@@ -171,7 +171,7 @@ function Alerts() {
 
               <h3>
 
-                {item.productName}
+                {item.brand} {item.productName}
 
               </h3>
 

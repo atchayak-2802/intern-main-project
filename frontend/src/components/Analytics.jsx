@@ -36,9 +36,9 @@ function Analytics() {
     const formatted = res.data.map(
       (item) => ({
 
-        name: item._id,
+      name: `${item._id.productName} - ${item._id.brand}`,
 
-        value: item.totalSold,
+        value: item.totalSold
 
       })
     );
