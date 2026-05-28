@@ -123,8 +123,13 @@ const brandAnalytics = async (req, res) => {
 
         {
           $group: {
+            _id: {
 
-            _id: "$brand",
+            
+            productName: "$productName",
+            brand: "$brand",
+            },
+           
 
             totalSold: {
               $sum: "$quantitySold",
