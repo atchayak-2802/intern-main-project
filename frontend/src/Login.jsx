@@ -30,7 +30,8 @@ function Login() {
 };
   return (
     <div className="card" style={{maxWidth: "400px",margin: "100px auto"}}>
-      <h2>Login</h2>
+      
+      <h2>LOGIN FORM</h2>
 
       <form onSubmit={handleLogin}>
         <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
@@ -44,10 +45,11 @@ function Login() {
         <br /><br />
 
         <button type="submit">Login</button>
-        <p>
-  Don't have an account?
-  <Link to="/register"> Register</Link>
-</p>
+        <br/><br/>
+        <h4>
+  Don't have an account ?   
+  <Link to="/register">REGISTER</Link></h4>
+<br/><br/>
       </form>
     </div>
   );

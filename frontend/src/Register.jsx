@@ -42,7 +42,7 @@ function Register() {
 
       <form className="auth-form" onSubmit={handleRegister}>
 
-        <h2>Register</h2>
+        <h2>REGISTRATION FORM</h2>
 
         <input
           type="text"
@@ -50,7 +50,7 @@ function Register() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-        />
+        /><br/><br/>
 
         <input
           type="email"
@@ -58,7 +58,7 @@ function Register() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-        />
+        /><br/><br/>
 
         <input
           type="password"
@@ -66,16 +66,16 @@ function Register() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-        />
+        /><br/><br/>
 
         <button type="submit">
           Register
-        </button>
+        </button><br/><br/>
 
-        <p>
-          Already have an account?
-          <Link to="/"> Login</Link>
-        </p>
+        <h4>
+          Already have an account ?
+          <Link to="/"> LOGIN</Link>
+        </h4>
 
       </form>
 

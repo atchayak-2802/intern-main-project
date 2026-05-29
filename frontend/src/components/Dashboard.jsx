@@ -17,7 +17,7 @@ function Dashboard() {
   <div className="put">
     <div className="dashboard-grid" >
         
-      <h1>SMART INVENTORY AND EXPIRY MANAGEMENT</h1>
+      <h1>WELCOME TO SMART INVENTORY AND EXPIRY MANAGEMENT</h1>
 
       <div className="dashboard-cards">
 
