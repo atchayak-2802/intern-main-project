@@ -12,6 +12,7 @@ import Alerts from "./components/Alerts";
 import Analytics from "./components/Analytics";
 import Summary from "./components/Summary";
 
+
 function App() {
 
   return (
@@ -22,7 +23,13 @@ function App() {
 
       <Route path="/register" element={<Register />} />
 
-      <Route path="/dashboard" element={<Dashboard />} />
+       <Route
+          path="/dashboard"
+          element={
+           
+              <Dashboard />
+            }
+        />
 
       <Route path="/inventory" element={<Inventory />} />
 

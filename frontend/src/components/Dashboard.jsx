@@ -1,6 +1,17 @@
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 function Dashboard() {
+   const navigate = useNavigate();
+    const handleLogout = () => {
+ 
+
+  localStorage.removeItem("token");
+
+
+  navigate("/");
+};
+
+
 
   return (
   <div className="put">
@@ -27,7 +38,15 @@ function Dashboard() {
         </Link>
         <Link to="/summary">
   <button>SUMMARY</button>
-</Link>
+  </Link>
+
+
+  
+  <button onClick={handleLogout}>
+      Logout
+    </button>
+
+
 
       </div>
 </div>
