@@ -8,7 +8,7 @@ const productRoutes = require("./routes/productRoutes");
 
 const salesRoutes = require("./routes/salesRoutes");
 
-
+const authRoutes = require("./routes/authRoutes");
 dotenv.config();
 
 connectDB();
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use("/api/products",productRoutes);
 
 app.use("/api/sales",salesRoutes);
-const authRoutes = require("./routes/authRoutes");
+
 
 app.use("/api/auth", authRoutes);
 
