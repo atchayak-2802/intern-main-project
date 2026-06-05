@@ -42,7 +42,7 @@ function ProductForm({
   const handleSubmit = async () => {
 
     await axios.post(
-      "http://localhost:5000/api/products",
+      "https://intern-main-project.onrender.com/api/products",
 
       {
         ...form,
