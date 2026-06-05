@@ -13,7 +13,7 @@ function Login() {
 
   try {
     const res = await axios.post(
-      "https://intern-main-project.onrender.com/api/auth/login",
+      "http://localhost:5000/api/auth/login",
       { email, password }
     );
 

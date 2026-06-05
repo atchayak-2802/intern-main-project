@@ -12,7 +12,7 @@ function SalesTable({ refresh }) {
   const fetchSales = async () => {
 
     const res = await axios.get(
-      "https://intern-main-project.onrender.com/api/sales"
+      "http://localhost:5000/api/sales"
     );
 
     setSales(res.data);

@@ -20,11 +20,11 @@ const navigate = useNavigate();
   const fetchAlerts = async () => {
 
     const exp = await axios.get(
-      "https://intern-main-project.onrender.com/api/products/alerts/expiry"
+      "http://localhost:5000/api/products/alerts/expiry"
     );
 
     const low = await axios.get(
-      "https://intern-main-project.onrender.com/api/products/alerts/lowstock"
+      "http://localhost:5000/api/products/alerts/lowstock"
     );
 
     setExpiry(exp.data);

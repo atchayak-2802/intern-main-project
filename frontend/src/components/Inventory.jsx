@@ -14,7 +14,7 @@ function Inventory() {
   const fetchProducts = async () => {
 
     const res = await axios.get(
-      "https://intern-main-project.onrender.com/api/products"
+      "http://localhost:5000/api/products"
     );
 
     setProducts(res.data);

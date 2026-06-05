@@ -54,7 +54,7 @@ function ProductTable({
 
   await axios.put(
 
-    `https://intern-main-project.onrender.com/api/products/${item._id}`,
+    `http://localhost:5000/api/products/${item._id}`,
 
     {
 
