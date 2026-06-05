@@ -14,7 +14,7 @@ function Summary() {
   const fetchSummary = async () => {
 
     const res = await axios.get(
-      "http://localhost:5000/api/sales/summary/today"
+      "https://intern-main-project.onrender.com/api/sales/summary/today"
     );
 
     setData(res.data);

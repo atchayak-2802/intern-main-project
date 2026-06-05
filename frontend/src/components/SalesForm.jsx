@@ -42,7 +42,7 @@ function SalesForm({
   try {
 
     await axios.post(
-      "http://localhost:5000/api/sales/sell",
+      "https://intern-main-project.onrender.com/api/sales/sell",
 
       {
         ...sale,

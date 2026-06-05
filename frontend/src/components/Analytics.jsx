@@ -39,7 +39,7 @@ function Analytics() {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/api/sales/analytics"
+        "https://intern-main-project.onrender.com/api/sales/analytics"
       );
 
       // ✅ DIRECTLY SET DATA
